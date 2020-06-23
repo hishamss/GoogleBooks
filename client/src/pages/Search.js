@@ -36,6 +36,7 @@ class Search extends Component {
     };
     API.saveBook(bookToSave)
       .then((res) => {
+        console.log("result", res);
         this.state.books.splice(index, 1);
         this.setState({ books: this.state.books });
       })
