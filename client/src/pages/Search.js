@@ -40,7 +40,7 @@ class Search extends Component {
         this.setState({ books: this.state.books });
       })
       .catch((err) => {
-        console.log("Smth Went Wrong Or Book already Exists!!!");
+        console.log("Smth Went Wrong Or Book already Exists!!!", err);
       });
   };
 
