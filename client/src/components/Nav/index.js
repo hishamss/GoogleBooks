@@ -1,15 +1,20 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
+import "./style.css";
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg">
       <Link className="navbar-brand" to="/">
         Google Books
       </Link>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+      <div
+        className="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
+        <ul className="navbar-nav">
           <li className="nav-item">
             <Link
+              style={{ marginRight: "20px" }}
               to="/"
               className={
                 useLocation().pathname === "/" ? "nav-link active" : "nav-link"

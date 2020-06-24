@@ -1,8 +1,6 @@
 .jumbotron {
   color: white;
   height: 400px;
-}
-
-.display-4 {
-  padding-top: 40px;
+  box-shadow: inset 0 0 0 2000px rgba(27, 27, 27, 0.397);
+  padding-top: 0;
 }

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Book from "../components/Book";
 import Form from "../components/Form";
+import Nav from "../components/Nav";
+import Jumbo from "../components/Jumbo";
+import Wrapper from "../components/Wrapper";
 class Search extends Component {
   state = {
     books: [],
@@ -48,33 +51,37 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Form
-          value={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-        />
-        <br />
-        <div
-          style={
-            this.state.books.length
-              ? { padding: "20px", border: "1px solid black" }
-              : {}
-          }
-        >
-          {this.state.books.map((book, i) => (
-            <Book
-              sender="Search"
-              key={i}
-              index={i}
-              title={book.volumeInfo.title}
-              authors={book.volumeInfo.authors}
-              description={book.volumeInfo.description}
-              image={book.volumeInfo.imageLinks.thumbnail}
-              link={book.volumeInfo.infoLink}
-              saveBook={this.saveBook}
-            ></Book>
-          ))}
-        </div>
+        <Jumbo>
+          <Nav />
+          <Form
+            value={this.state.search}
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+          />
+        </Jumbo>
+        <Wrapper>
+          <div
+            style={
+              this.state.books.length
+                ? { padding: "20px", border: "1px solid black" }
+                : {}
+            }
+          >
+            {this.state.books.map((book, i) => (
+              <Book
+                sender="Search"
+                key={i}
+                index={i}
+                title={book.volumeInfo.title}
+                authors={book.volumeInfo.authors}
+                description={book.volumeInfo.description}
+                image={book.volumeInfo.imageLinks.thumbnail}
+                link={book.volumeInfo.infoLink}
+                saveBook={this.saveBook}
+              ></Book>
+            ))}
+          </div>
+        </Wrapper>
       </div>
     );
   }
