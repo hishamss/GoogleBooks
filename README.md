@@ -1,86 +1,89 @@
 # Google Books Search
 
-### Overview
+<h1><a href="https://pacific-journey-77599.herokuapp.com/">Heroku Link</a></h1>
 
-In this activity, you'll create a new React-based Google Books Search app. This assignment requires you to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. You'll also use Node, Express and MongoDB so that users can save books to review or purchase later.
+It's React-based app backed with MongoDB. the app uses Google API to search for Books.
 
-### Commits
+<h2>Use</h2>
+<hr>
 
-Having an active and healthy commit history on GitHub is important for your future job search. It is also extremely important for making sure your work is saved in your repository. If something breaks, committing often ensures you are able to go back to a working version of your code.
+1. in the search page, user can search for books by typing the topic. For each book, the user can view the book from google page or save the book in the DB.
+2. in the saved page, user is able to display all the saved books and has an option to delete books from DB.
 
-* Committing often is a signal to employers that you are actively working on your code and learning.
+!["app"](/client/public/app.gif)
 
-  * We use the mantra “commit early and often.”  This means that when you write code that works, add it and commit it!
+<h2>Technology Used</h2>
 
-  * Numerous commits allow you to see how your app is progressing and give you a point to revert to if anything goes wrong.
+<hr>
 
-* Be clear and descriptive in your commit messaging.
+<table>
+<tr>
+<th>Technology</th>
 
-  * When writing a commit message, avoid vague messages like "fixed." Be descriptive so that you and anyone else looking at your repository knows what happened with each commit.
+<th>Link</th>
 
-* We would like you to have well over 200 commits by graduation, so commit early and often!
+</tr>
+<tr>
+<td>React</td>
+<td>https://reactjs.org/</td>
+</tr>
+<tr>
+<td>Javascript</td>
+<td></td>
+</tr>
+<tr>
+<td>CSS3</td>
+<td></td>
+</tr>
+<tr>
+<td>Bootstrap</td>
+<td>https://getbootstrap.com/</td>
+</tr>
+<tr>
+<td>Google Fonts</td>
+<td>https://fonts.google.com/</td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>https://github.com/</td>
+</tr>
+<tr>
+<td>Heroku:Cloud Application Platform</td>
+<td>https://www.heroku.com/</td>
+</tr>
+<tr>
+<td>mLab</td>
+<td>https://mlab.com/</td>
+</tr>
+<tr>
+<td>Mongoose ORM</td>
+<td>https://www.npmjs.com/package/mongoose</td>
+</tr>
+<tr>
+<td>Node Package Manager(NPM)</td>
+<td>https://www.npmjs.com/</td>
+</tr>
+<tr>
+<td>Font Awesome</td>
+<td>https://fontawesome.com/</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>https://nodejs.org/en/</td>
+</tr>
+<tr>
+<td>Express</td>
+<td>https://www.npmjs.com/package/express</td>
+</tr>
+<tr>
+<td>Axios</td>
+<td>https://www.npmjs.com/package/axios</td>
+</tr>
+</table>
 
+<h2>Author</h2>
+<hr>
 
-### Instructions
-
-* This application requires at minimum 2 pages, check out the following mockup images for each page:
-
-  * [Search](Search.png) - User can search for books via the Google Books API and render them here. User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database.
-
-  * [Saved](Saved.png) - Renders all books saved to the Mongo database. User has an option to "View" the book, bringing them to the book on Google Books, or "Delete" a book, removing it from the Mongo database.
-
-1. Start by using the 07-Ins_Mern example as a base for your application.
-
-2. Add code to connect to a MongoDB database named `googlebooks` using the mongoose npm package.
-
-3. Using mongoose, then create a Book schema.
-
-4. At a minimum, books should have each of the following fields:
-
-* `title` - Title of the book from the Google Books API
-
-* `authors` - The books's author(s) as returned from the Google Books API
-
-* `description` - The book's description as returned from the Google Books API
-
-* `image` - The Book's thumbnail image as returned from the Google Books API
-
-* `link` - The Book's information link as returned from the Google Books API
-
-* Creating `documents` in your `books` collection similar to the following:
-
-    ```js
-    {
-      authors: ["Suzanne Collins"]
-      description: "Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature."
-      image: "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-      link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
-      title: "The Hunger Games"
-    }
-    ```
-
-5. Create a layout similar to the mockups displayed above. This should be a SPA (Single Page Application) that uses [`react-router-dom`](https://github.com/reactjs/react-router) to navigate, hide and show your React components without changing the route within Express.
-
-* The layout should include at least two React Components for each page `Search` and `Saved`.
-
-* Feel free to try out alternative CSS framework to Bootstrap.
-
-6. Add the following Express routes for your app:
-
-* `/api/books` (get) - Should return all saved books as JSON.
-
-* `/api/books` (post) - Will be used to save a new book to the database.
-
-* `/api/books/:id` (delete) - Will be used to delete a book from the database by Mongo `_id`.
-
-* `*` (get) - Will load your single HTML page in `client/build/index.html`. Make sure you have this _after_ all other routes are defined.
-
-* Deploy your application to Heroku once complete. **You must use Create React App** and current versions of React and React-Router-Dom for this assignment.
-
-
-### Hints
-
-* Have a look at [https://developers.google.com/books/docs/v1/getting_started#REST](https://developers.google.com/books/docs/v1/getting_started#REST)
-
-#### Example Endpoint
-* [https://www.googleapis.com/books/v1/volumes?q=coraline](https://www.googleapis.com/books/v1/volumes?q=coraline)
+- <a href="hishamsaymeh.com">Portfolio</a>
+- <a href="https://www.linkedin.com/in/hisham-saymeh">LinkedIn</a>
+- <a href="https://github.com/hishamss">GitHub</a>
