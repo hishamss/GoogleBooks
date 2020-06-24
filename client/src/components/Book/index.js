@@ -46,7 +46,11 @@ function Book(props) {
           </div>
           <div className="w-100"></div>
           <div className="col">
-            <img src={props.image} alt="Book"></img>
+            <img
+              style={{ width: "230px", height: "300px" }}
+              src={props.image}
+              alt="Book"
+            ></img>
           </div>
           <div className="col">
             <p>{props.description}</p>
