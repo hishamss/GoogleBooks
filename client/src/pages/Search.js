@@ -60,13 +60,7 @@ class Search extends Component {
           />
         </Jumbo>
         <Wrapper>
-          <div
-            style={
-              this.state.books.length
-                ? { padding: "20px", border: "1px solid black" }
-                : {}
-            }
-          >
+          <div style={{ padding: "20px" }}>
             {this.state.books.map((book, i) => (
               <Book
                 sender="Search"

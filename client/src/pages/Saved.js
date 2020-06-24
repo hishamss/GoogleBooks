@@ -31,13 +31,7 @@ class Saved extends Component {
           <Nav />
         </Jumbo>
         <Wrapper>
-          <div
-            style={
-              this.state.savedBooks.length
-                ? { padding: "20px", border: "1px solid black" }
-                : {}
-            }
-          >
+          <div style={{ padding: "20px" }}>
             {this.state.savedBooks.map((book, i) => (
               <Book
                 sender="Saved"
