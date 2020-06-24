@@ -8,6 +8,7 @@ function Jumbo({ children }) {
         background: `url(${process.env.PUBLIC_URL}/jumbBG.jpg)`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        marginBottom: 0,
       }}
     >
       {children}

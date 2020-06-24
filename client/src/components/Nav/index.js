@@ -17,7 +17,7 @@ function Nav() {
               style={{ marginRight: "20px" }}
               to="/"
               className={
-                useLocation().pathname === "/" ? "nav-link active" : "nav-link"
+                useLocation().pathname === "/" ? "nav-link clicked" : "nav-link"
               }
             >
               Search
@@ -28,7 +28,7 @@ function Nav() {
               to="/saved"
               className={
                 useLocation().pathname === "/saved"
-                  ? "nav-link active"
+                  ? "nav-link clicked"
                   : "nav-link"
               }
             >

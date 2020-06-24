@@ -4,13 +4,21 @@ function Book(props) {
   const renderButton = () => {
     if (props.sender === "Search") {
       return (
-        <button type="button" onClick={() => props.saveBook(props.index)}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => props.saveBook(props.index)}
+        >
           save
         </button>
       );
     } else {
       return (
-        <button type="button" onClick={() => props.deleteBook(props.index)}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => props.deleteBook(props.index)}
+        >
           Delete
         </button>
       );
@@ -28,11 +36,12 @@ function Book(props) {
           </div>
           <div className="col">
             <button
+              className="btn btn-primary"
               onClick={() => window.open(props.link, "_blank")}
               type="button"
             >
               View
-            </button>
+            </button>{" "}
             {renderButton()}
           </div>
           <div className="w-100"></div>

@@ -11,3 +11,7 @@
   color: white;
   font-size: 2rem;
 }
+
+.clicked {
+  color: #007bff !important;
+}
